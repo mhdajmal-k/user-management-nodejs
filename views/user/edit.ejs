@@ -1,0 +1,24 @@
+<%- include("../layout/header") -%>
+<form action="" method="post">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="user_id" value="<%=user._id%> ">
+        <input type="text" class="form-control" name="name" value="<%= user.name %>" placeholder="Enter Name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" value="<%= user.email %>" placeholder="Enter Email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="mobile">Mobile</label>
+        <input type="tel" class="form-control" name="mobile" value="<%= user.mobile %>" placeholder="Enter Mobile" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">update</button>
+</form>
+
+ 
+
+<%- include("../layout/footer") -%>

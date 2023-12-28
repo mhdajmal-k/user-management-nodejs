@@ -1,0 +1,39 @@
+<%- include("../layout/header") -%>
+
+<% 
+if(typeof message!=='undefined'){
+    %>
+    <h4><%= message %></h4>
+    <%
+    }
+    %>
+
+    <div class="center-div text-center" id="log">
+        <div class="container w-25  mt-5" id="st">
+            <h2 class="mb-4">Login</h2>
+
+            <form method="post" action="/login">
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" name="password" placeholder="Enter your password"
+                        required >
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-success m-4">Submit</button>
+            </form>
+            <div>
+            </div>
+
+        </div>
+    </div>
+
+    <%- include("../layout/footer") -%>

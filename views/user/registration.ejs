@@ -1,0 +1,47 @@
+<%- include("../layout/header") -%>
+    <div class="center-div text-center">
+        <div class="container w-25  mt-5" id="st">
+            <h2 class="mb-4">Registration Form</h2>
+
+            <form method="post" action="">
+                <!-- Name Field -->
+                <div class="form-group ">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
+                </div>
+
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group ">
+                    <label for="moblie">Mobile Number:</label>
+                    <input type="number" class="form-control" name="mobile" placeholder="Enter your name" required>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" name="password" placeholder="Enter your password"
+                        required>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-success m-4">Submit</button>
+            </form>
+               <div>
+            <% if(typeof message!=='undefined' ){ %>
+                <P style="color: rgb(0, 0, 0);font-size: 20px;margin-bottom: 20px;">
+                    <%= message %>
+                </P>
+                <% } %>
+            </div>
+
+        </div>
+    </div>
+  
+
+
+            <%- include("../layout/footer") -%>

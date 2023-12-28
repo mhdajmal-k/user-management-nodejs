@@ -1,0 +1,53 @@
+<%- include("../layout/header") -%>
+    <div>
+        <h2 style="text-align: center;">Welcome to Home <%= user.email %>
+        </h2>
+
+    </div>
+    <div class="container mt-5 te " style="width:fit-content;margin-left: 10px;">
+        
+        <table class="table table-bordered">
+            <tr>
+                <td>name</td>
+                <td>
+                    <%= user.name %>
+                </td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>
+                    <%= user.email %>
+                </td>
+            </tr>
+            <tr>
+                <td>mobile</td>
+                <td>
+                    <%= user.mobile %>
+                </td>
+            </tr>
+            <td>Verified</td>
+            <td>
+                <% if(user.is_varified==1){ 
+                    %>
+                    <p>
+                        Verified
+                    </p>
+                    <%
+                }
+                %>
+            </td>
+            </tr>
+
+
+        </table>
+    </div>
+
+
+    <%= message %>
+    <a href="/edit?id=<%= user._id %>">Edit</a>
+
+
+
+        <a href="logout" style="text-decoration: none;">Logout</a>
+
+        <%- include("../layout/footer") -%>
