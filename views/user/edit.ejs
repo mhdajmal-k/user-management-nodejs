@@ -1,8 +1,8 @@
 <%- include("../layout/header") -%>
-<form action="" method="post">
+<form action="/edit" method="post">
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" name="user_id" value="<%=user._id%> ">
+        <input type="hidden" name="user_id" value="<%= user._id %>">
         <input type="text" class="form-control" name="name" value="<%= user.name %>" placeholder="Enter Name" required>
     </div>
 
