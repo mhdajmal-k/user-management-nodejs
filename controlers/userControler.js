@@ -149,6 +149,7 @@ const updateProfile = async (req, res) => {
 
     console.log(userData, "this is user data///////");
     if (userData) {
+        console.log('haih');
         res.redirect("/home");
     } else {
         res.redirect("/login");
