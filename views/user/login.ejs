@@ -1,14 +1,14 @@
 <%- include("../layout/header") -%>
 
-<% 
+<!-- <% 
 if(typeof message!=='undefined'){
     %>
     <h4><%= message %></h4>
     <%
     }
-    %>
+    %> -->
 
-    <div class="center-div text-center" id="log">
+    <div class="center-div text-center " id="log">
         <div class="container w-25  mt-5" id="st">
             <h2 class="mb-4">Login</h2>
 
@@ -29,9 +29,19 @@ if(typeof message!=='undefined'){
 
                 <!-- Submit Button -->
                 <button type="submit" class="btn btn-success m-4">Submit</button>
+                <% 
+if(typeof message!=='undefined'){
+    %>
+    <h4><%= message %></h4>
+    <%
+    }
+    %>
+
             </form>
             <div>
             </div>
+            
+
             <a href="/register" >registration</a>
 
         </div>

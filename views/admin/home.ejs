@@ -1,6 +1,34 @@
 <%- include("../layout/headerAdmin") %>
+    <h1 style="text-align: center;">Welcome <%=admin.name %>
+    </h1>
+    <a href="/admin/dashboard">ToDashboard</a>
+   
+    <table class="table table-border" style="width: fit-content;">
+        <thead>
+            <tr>
+                <td>Name
+
+                </td>
+                <td>
+                    <%= admin.email%>
+                </td>
+            </tr>
+            <tr>
+                <td>mobile
+
+                </td>
+                <td>
+                    <%= admin.mobile%>
+                </td>
+            </tr>
+          
+        </thead>
+    </table>
+
+    <a href="/admin/logout">Logout</a>
 
 
 
 
-<%- include("../layout/footer")%>
+
+    <%- include("../layout/footer")%>

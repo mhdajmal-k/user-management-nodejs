@@ -7,7 +7,7 @@ const securePassword = async (password) => {
     const passwordHashed = await bcrypt.hash(password, 10);
     return passwordHashed;
   } catch (error) {
-    console.log(error.message);
+    console.log(error.message+'harsh');
   }
 };
 
@@ -27,7 +27,7 @@ const login = async (req, res) => {
     res.render("registration");
   } catch (error) {
     console.log(error.message);
-    console.log("its from here1");
+   
   }
 };
 const insertUser = async (req, res) => {
@@ -76,8 +76,8 @@ const verifyLogin = async (req, res) => {
     if (userDAta) {
       const passwordMatch = await bcrypt.compare(password, userDAta.password);
       if (passwordMatch) {
-        if (userDAta.is_varified === 0) {
-          res.render("loging", { message: "please verify you mail" });
+        if (userDAta.is_varified === 1) {
+          res.render("login", { message: "please verify you mail" });
         } else {
           req.session.user_id = userDAta._id;
           console.log(req.session.user_id);
@@ -98,7 +98,6 @@ const loadHome = async (req, res) => {
     const userData = await user.findOne({ _id: req.session.user_id });
 
     res.render("home", { user: userData, message: "hello testing" });
-    console.log("testig in loadhome");
   } catch (error) {
     console.log(error.message);
   }
@@ -146,10 +145,7 @@ const updateProfile = async (req, res) => {
     userData.mobile = mobile;
 
     await userData.save();
-
-    console.log(userData, "this is user data///////");
     if (userData) {
-        console.log('haih');
         res.redirect("/home");
     } else {
         res.redirect("/login");

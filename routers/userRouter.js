@@ -3,6 +3,7 @@ const user_router=express()
 const ejs=require("ejs")
 const bodyParser=require("body-parser")
 const session=require("express-session")
+const nocache=require("nocache")
 
 
 const userController=require("../controlers/userControler")
@@ -18,6 +19,8 @@ user_router.use(session({
 
 user_router.use(bodyParser.json())
 user_router.use(bodyParser.urlencoded({extended:true}))
+user_router.use(nocache())
+
 
 
 user_router.set('view engine','ejs')

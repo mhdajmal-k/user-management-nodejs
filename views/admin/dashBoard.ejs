@@ -1,0 +1,47 @@
+<%- include("../layout/headerAdmin") %>
+<div class="container mt-5">
+<table class="table table-border">
+    <thead class="thead-dark">
+        <tr>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>MOBILE</th>
+            <th>EDIT</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <%
+        if(users.length>0){
+            for(let i=0;i<users.length;i++) {
+                %> <tr>
+                    <!-- clear this -->
+                    <td><%= users[i].name %></td>
+                    <td><%= users[i].email %></td>
+                    <td><%= users[i].mobile %></td>
+                    <td><button class="btn btn-primary"><a href="/admin/edituser?id=<%= users[i]._id %>" style="text-decoration: none; color: black;">Edit User</a></button>
+                    </td>
+                    <td><button class="btn btn-danger"><a href="/admin/delete?id=<%= users[i]._id %>" style="text-decoration: none; color: black;">Delete</a></button>
+                    </td>
+
+                </tr>
+                <%
+            }
+
+        }else{
+            %>
+          
+            <tr>
+                <td colspan="3">User Not Found</td>
+            </tr>
+            <%
+        }
+        %>
+    </tbody>
+</table>
+<button class="btn btn-primary"><a href="/admin/new-user" style="text-decoration: none; color: black;">Add New User</a></button>
+<button  class="btn btn-info btn-block" ><a href="/admin/home" style="text-decoration: none; color: black;">To dashboard</a></button>
+
+
+</div>
+<%- include("../layout/footer") %>

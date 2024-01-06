@@ -1,11 +1,11 @@
-<%- include("../layout/headerAdmin") %>
+<%- include("../layout/headerAdmin") -%>
 
 
-<h1>Admin Login</h1>
+<h1 style="text-align: center;">Admin Login</h1>
 
 <%
 if(typeof message !=='undefined'){%>
-    <h3><%=  >%</h3>
+    <h3><%=message  %></h3>
 <%
 }
 %>
@@ -17,11 +17,11 @@ if(typeof message !=='undefined'){%>
                     <h3 class="text-center">Login</h3>
                 </div>
                 <div class="card-body">
-                    <form action="/login" method="post">
+                    <form action="" method="post">
                         <!-- Username Input -->
                         <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" required>
+                            <label for="username">Email</label>
+                            <input type="text" class="form-control" id="name" name="email" required>
                         </div>
 
                         <!-- Password Input -->
@@ -32,11 +32,11 @@ if(typeof message !=='undefined'){%>
 
                         <!-- Login Button -->
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
-                    </form>
+                    </form>               
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<%- include("../layout/footer")%>
+<%- include("../layout/footer") -%>

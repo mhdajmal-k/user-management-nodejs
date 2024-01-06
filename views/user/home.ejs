@@ -27,7 +27,7 @@
             </tr>
             <td>Verified</td>
             <td>
-                <% if(user.is_varified==1){ 
+                <% if(user.is_varified==0){ 
                     %>
                     <p>
                         Verified
@@ -46,10 +46,13 @@
 
 
     <%= message %>
-    <a href="/edit?id=<%= user._id %>">Edit</a>
+    <!-- <a href="/edit?id=<%= user._id %>">Edit</a> -->
+    <button class="btn btn-primary"><a href="/edit?id=<%= user._id %>" style="text-decoration: none; color: black;">Edit</a></button>
 
 
 
-        <a href="logout" style="text-decoration: none;">Logout</a>
+<!-- 
+        <a href="logout" style="text-decoration: none;">Logout</a> -->
+        <button class="btn btn-primary"><a href="logout" style="text-decoration: none; color: black;">LogOut</a></button>
 
         <%- include("../layout/footer") -%>

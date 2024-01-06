@@ -9,8 +9,8 @@ const app=express()
 const user_router=require("./routers/userRouter")
 app.use('/',user_router)
 
-// const admin_router=require("./routers/adminRouter")
-// app.use('/admin',admin_router)
+const admin_router=require("./routers/adminRouter")
+app.use('/admin',admin_router)
 
 
 const port=3000;
