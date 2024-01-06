@@ -47,7 +47,7 @@ const insertUser = async (req, res) => {
 
       res.render("registration", {
         message:
-          "your registration was been successfully.please verify your mail",
+          "your registration was been successfully",
       });
       console.log("done");
     } else {
@@ -87,7 +87,7 @@ const verifyLogin = async (req, res) => {
         res.render("login", { message: "email and password is incorrect" });
       }
     } else {
-      res.render("login", { message: "email and password is incorrect" });
+      res.render("login", { message: "email and password is incorrect " });
     }
   } catch (error) {
     console.log(error.message);
@@ -97,7 +97,7 @@ const loadHome = async (req, res) => {
   try {
     const userData = await user.findOne({ _id: req.session.user_id });
 
-    res.render("home", { user: userData, message: "hello testing" });
+    res.render("home", { user: userData});
   } catch (error) {
     console.log(error.message);
   }

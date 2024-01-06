@@ -1,7 +1,7 @@
 <%- include("../layout/headerAdmin") %>
     <h1 style="text-align: center;">Welcome <%=admin.name %>
     </h1>
-    <a href="/admin/dashboard">ToDashboard</a>
+    <button class="btn btn-primary mt-4 mb-3 "><a href="/admin/dashboard" style="text-decoration: none; color: black;">ToDashboard</a></button>
    
     <table class="table table-border" style="width: fit-content;">
         <thead>
@@ -24,8 +24,9 @@
           
         </thead>
     </table>
+    <button class="btn btn-danger" style="margin-left: 50%; margin-top: 50px;"><a href="/admin/logout" style="text-decoration: none; color: black;">LogOut</a></button>
 
-    <a href="/admin/logout">Logout</a>
+    
 
 
 
